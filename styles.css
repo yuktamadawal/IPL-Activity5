@@ -1,0 +1,363 @@
+html{
+    scroll-behavior:smooth;
+}
+
+
+.hero-buttons a {
+    display: inline-block;
+    background: var(--accent);
+    color: black;
+    text-decoration: none;
+    padding: 12px 25px;
+    border-radius: 30px;
+    margin: 10px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.hero-buttons a:hover {
+    background: white;
+    color: var(--primary);
+}
+
+
+:root{
+    --primary:#260494;
+    --accent:#F4C542;
+    --background:#F5F7FA;
+    --text:#222;
+    --white:#fff;
+}
+
+/* Reset */
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:Arial, Helvetica, sans-serif;
+}
+
+body{
+    background:var(--background);
+    color:var(--text);
+    line-height:1.6;
+}
+
+/* ---------------- NAVIGATION (Flexbox) ---------------- */
+
+header{
+    background-color: rgb(246, 197, 248);
+    
+    width:100%;
+    top:0;
+    z-index:1000;
+}
+
+.navbar{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    padding:15px 40px;
+}
+
+.navbar h1{
+    color:rgb(164, 85, 85);
+    font-size:28px;
+}
+
+nav{
+    display:flex;
+    gap:20px;
+}
+
+nav a{
+    color:#130b0b;
+    text-decoration:none;
+    font-weight:bold;
+}
+
+nav a:hover{
+    color:var(--accent);
+    text-decoration:underline;
+}
+
+/* ---------------- HERO SECTION ---------------- */
+
+#home{
+    margin-top:80px;
+    height:400px;
+    display:flex;
+    flex-direction:column;
+    justify-content:center;
+    align-items:center;
+    text-align:center;
+    color:rgb(255, 255, 255);
+    background:linear-gradient(to right,#0B3D91,#1565C0);
+    padding:20px;
+}
+
+#home h2{
+    font-size:42px;
+    margin-bottom:15px;
+    color: rgb(216, 194, 194);
+}
+
+#home p{
+    font-size:15px;
+    margin-bottom:25px;
+}
+
+#home button{
+    background:var(--accent);
+    border:none;
+    padding:12px 25px;
+    border-radius:30px;
+    margin:10px;
+    font-weight:bold;
+    cursor:pointer;
+}
+
+#home button:hover{
+    background:white;
+    color:var(--primary);
+}
+
+/* ---------------- SECTIONS ---------------- */
+
+section{
+    padding:50px;
+}
+
+section h2{
+    color:var(--primary);
+    margin-bottom:20px;
+}
+
+/* ---------------- LISTS ---------------- */
+
+ul,ol{
+    margin-left:30px;
+
+}
+
+/* ---------------- TABLE ---------------- */
+
+.table-container{
+    overflow-x:auto;
+}
+
+table{
+    width:100%;
+    border-collapse:collapse;
+    min-width:900px;
+    background:rgb(155, 218, 245);
+    box-shadow:0 3px 10px rgba(0,0,0,.2);
+}
+
+th{
+    background:var(--primary);
+    color: white;
+    padding:12px;
+}
+
+td{
+    padding:12px;
+    text-align:center;
+}
+
+tr:nth-child(even){
+    background:#EEF4FF;
+}
+
+tr:hover{
+    background:#D7E6FF;
+}
+
+table button{
+    background:var(--accent);
+    border:none;
+    padding:8px 15px;
+    border-radius:20px;
+    cursor:pointer;
+}
+
+table button:hover{
+    background:var(--primary);
+    color:white;
+}
+
+/* ---------------- FORM + SUMMARY (CSS Grid) ---------------- */
+
+.booking-grid{
+    display:grid;
+    grid-template-columns:2fr 1fr;
+    gap:30px;
+    align-items:start;
+}
+
+form{
+    background-color:#D7E6FF;
+    padding:25px;
+    border-radius:15px;
+    box-shadow:0 3px 10px rgba(0,0,0,.2);
+}
+
+form label{
+    font-weight:bold;
+}
+
+form input,
+form select{
+    width:100%;
+    padding:10px;
+    margin:8px 0 15px;
+    border:1px solid #e1dada;
+    border-radius:8px;
+}
+
+form button{
+    padding:12px 20px;
+    border:none;
+    border-radius:8px;
+    background:var(--primary);
+    color:white;
+    cursor:pointer;
+    margin-right:10px;
+}
+
+form button:hover{
+    background:var(--accent);
+    color:black;
+}
+
+/* Booking Summary Card */
+
+aside{
+    background:white;
+    padding:25px;
+    border-radius:15px;
+    box-shadow:0 3px 10px rgba(0,0,0,.2);
+    border-left:8px solid var(--accent);
+}
+
+aside h3{
+    color:var(--primary);
+    margin-bottom:15px;
+}
+
+aside h4{
+    color:green;
+    margin-top:15px;
+}
+
+/* ---------------- GUIDELINES CARDS ---------------- */
+
+#guidelines{
+    display:grid;
+    grid-template-columns:repeat(3,1fr);
+    gap:20px;
+}
+
+#guidelines h2{
+    grid-column:1/-1;
+}
+
+#guidelines article{
+    background:white;
+    padding:20px;
+    border-radius:12px;
+    box-shadow:0 2px 8px rgba(0,0,0,.15);
+    border-top:6px solid var(--accent);
+}
+
+/* ---------------- FOOTER ---------------- */
+
+footer{
+    background-color: #4788e3;
+    color:rgb(246, 242, 242);
+    text-align:center;
+    padding:20px;
+}
+
+/* ==================================================
+   MEDIA QUERIES (Responsive Design)
+================================================== */
+
+/* Tablet */
+
+@media (max-width:992px){
+
+    .booking-grid{
+        grid-template-columns:1fr;
+    }
+
+    #guidelines{
+        grid-template-columns:repeat(2,1fr);
+    }
+
+    #home h2{
+        font-size:34px;
+    }
+
+}
+
+/* Mobile */
+
+@media (max-width:768px){
+
+    .navbar{
+        flex-direction:column;
+        gap:15px;
+        text-align:center;
+    }
+
+    nav{
+        flex-direction:column;
+        gap:10px;
+    }
+
+    #home{
+        height:auto;
+        padding:70px 20px;
+    }
+
+    #home h2{
+        font-size:28px;
+    }
+
+    #home p{
+        font-size:16px;
+    }
+
+    section{
+        padding:30px 20px;
+    }
+
+    #guidelines{
+        grid-template-columns:1fr;
+    }
+
+}
+
+/* Small Mobile */
+
+@media (max-width:480px){
+
+    .navbar h1{
+        font-size:22px;
+    }
+
+    #home h2{
+        font-size:24px;
+    }
+
+    table{
+        min-width:700px;
+    }
+
+    form button{
+        width:100%;
+        margin:8px 0;
+    }
+
+}
